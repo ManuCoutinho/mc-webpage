@@ -1,8 +1,7 @@
 import httpClient from '@/service/httpClient'
 import { defineStore, acceptHMRUpdate } from 'pinia'
 
-export const useSearchByLetter = defineStore({
-	id: 'search-by-letter',
+export const useSearchByLetter = defineStore('search-by-letter', {
 	state: () => ({
 		rawItems: [] as string[]
 	}),

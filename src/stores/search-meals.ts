@@ -1,10 +1,9 @@
 import httpClient from '@/service/httpClient'
 import { defineStore, acceptHMRUpdate } from 'pinia'
 
-export const useSearchMeals = defineStore({
-	id: 'search-meals',
+export const useSearchMeals = defineStore('search-meals', {
 	state: () => ({
-		rawItems: [] as string[]
+		rawItems: ['Shake'] as string[]
 	}),
 	getters: {},
 	actions: {
