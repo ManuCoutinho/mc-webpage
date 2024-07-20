@@ -1,15 +1,19 @@
-import httpClient from '@/service/httpClient'
 import { defineStore, acceptHMRUpdate } from 'pinia'
+import type { SearchByLetter } from '@/models'
+import httpClient from '@/service/httpClient'
 
-export const useSearchByLetter = defineStore({
-	id: 'search-by-letter',
-	state: () => ({
-		rawItems: [] as string[]
+export const useSearchByLetter = defineStore('search-by-letter', {
+	state: (): SearchByLetter => ({
+		meals: []
 	}),
 	getters: {},
 	actions: {
-		searchMealsByLetter(letter: string) {
-			httpClient.get(`search.php?f=${letter}`).then((res) => this.rawItems.push(res.data.meals))
+		searchMealsByLetter(letter: string | null) {
+			if (letter) {
+				httpClient.get(`search.php?f=${letter}`).then((res) => {
+					this.meals = res.data.meals
+				})
+			}
 		}
 	}
 })

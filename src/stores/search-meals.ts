@@ -1,15 +1,23 @@
-import httpClient from '@/service/httpClient'
 import { defineStore, acceptHMRUpdate } from 'pinia'
+import httpClient from '@/service/httpClient'
+import type { SearchMeals } from '@/models'
 
-export const useSearchMeals = defineStore({
-	id: 'search-meals',
-	state: () => ({
-		rawItems: [] as string[]
+export const useSearchMeals = defineStore('search-meals', {
+	state: (): SearchMeals => ({
+		meals: [],
+		loading: false
 	}),
 	getters: {},
 	actions: {
 		searchMeals(keyword: string) {
-			httpClient.get(`search.php?s=${keyword}`).then((res) => this.rawItems.push(res.data.meals))
+			this.loading = true
+			httpClient.get(`search.php?s=${keyword}`).then((res) => {
+				this.meals = res.data.meals
+				this.loading = false
+			})
+		},
+		resetSearch() {
+			this.meals = []
 		}
 	}
 })
