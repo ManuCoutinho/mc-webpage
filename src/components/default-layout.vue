@@ -1,13 +1,13 @@
 <template>
-	<Navbar />
-	<main>
-		<div class="max-w-[1200px] mx-auto">
-			<RouterView />
+	<navbar-component />
+	<main class="w-full h-full bg-brand-white">
+		<div class="max-w-[1200px] mx-auto bg-brand-white">
+			<router-view />
 		</div>
 	</main>
 </template>
 
 <script setup lang="ts">
-import Navbar from '@/navbar-component.vue'
+import NavbarComponent from './navbar-component.vue'
 import { RouterView } from 'vue-router'
 </script>

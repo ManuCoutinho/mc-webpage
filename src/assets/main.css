@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	p {
+		@apply text-brand-base
+	}
+}
+
+
+#app {
+	@apply bg-brand-white p-0 m-0;
+}
+html {
+	@apply bg-brand-white;
+}

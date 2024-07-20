@@ -59,5 +59,13 @@ export interface MealByIngredient {
 
 export interface SearchByIngredient {
 	items: MealsType[]
-	ingredient: string | null
+	ingredient: IngredientsType | null
+}
+
+export interface SearchByLetter {
+	meals: MealsType[]
+}
+export interface SearchMeals {
+	meals: MealsType[]
+	loading: boolean
 }

@@ -1,23 +1,25 @@
 <template>
-	<div class="max-w-[800px] mx-auto p-8">
-		<h1 class="text-4xl font-bold mb-5 text-orange-500">{{ meal.strMeal }}</h1>
-		<img :src="meal.strMealThumb" :alt="meal.strMeal" class="max-w-full" />
-		<div class="grid grid-cols-1 sm:grid-cols-3 text-lg py-2">
-			<div>
-				<string class="font-bold">Category: {{ meal.strCategory }}</string>
-			</div>
-			<div>
-				<string class="font-bold">Area: {{ meal.strArea }}</string>
-			</div>
-			<div>
-				<string class="font-bold">Tags: {{ meal.strTags }}</string>
-			</div>
-		</div>
-		<div class="my-3">{{ meal.strInstructions }}</div>
-
-		<div class="grid grid-cols-1 sm:grid-cols-2">
-			<div>
-				<h2 class="text-2xl">Ingredients</h2>
+	<div class="max-w-3xl mx-auto p-8 space-y-4">
+		<h1 class="text-4xl font-bold mb-5 text-brand-primary">{{ meal.strMeal }}</h1>
+		<img :src="meal.strMealThumb" :alt="meal.strMeal" class="max-w-full rounded" />
+		<ul class="grid grid-cols-1 sm:grid-cols-3 text-lg py-2">
+			<li class="inline-flex gap-2">
+				<strong class="font-bold text-brand-base">Category: </strong>
+				<p>{{ meal.strCategory || " - "}}</p>
+			</li>
+			<li class="inline-flex gap-2">
+				<strong class="font-bold text-brand-base">Area: </strong>
+				<p>{{ meal.strArea || " - "}}</p>
+			</li>
+			<li class="inline-flex gap-2">
+				<strong class="font-bold text-brand-base">Tags: </strong>
+				<p>{{ meal.strTags || " - " }}</p>
+			</li>
+		</ul>
+		
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+			<div class="space-y-3">
+				<h2 class="text-2xl font-semibold">Ingredients</h2>
 				<ul>
 					<template v-for="(el, ind) of new Array(20)" :key="el">
 						<li v-if="meal[`strIngredient${ind + 1}` as keyof typeof meal]">
@@ -26,16 +28,22 @@
 					</template>
 				</ul>
 			</div>
-			<div class="mt-4">
-				<YoutubeButton :href="meal.strYoutube" />
+			<div class="flex flex-col justify-between">
 				<a
 					v-if="meal.strSource"
 					:href="meal.strSource"
 					target="_blank"
-					class="ml-3 px-3 py-2 rounded border-2 border-transparent text-indigo-600 transition-colors"
+					rel="noopener noreferrer nofollow"
+					aria-label="original source"
+					class="px-3 py-2 text-brand-tertiary hover:font-semibold hover:underline transition-colors self-end"
 					>View original source</a
 				>
+				<div class="w-fit self-end"><youtube-button :href="meal.strYoutube" /></div>
 			</div>
+		</div>
+		<div class="space-y-3">
+			<p class="font-semibold text-2xl">Method</p>
+			<p class="py-3 leading-7 text-justify text-md">{{ meal.strInstructions }}</p>
 		</div>
 	</div>
 </template>

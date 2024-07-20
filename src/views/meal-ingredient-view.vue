@@ -1,7 +1,5 @@
 <template>
-	<div class="p-8 pb-0">
-		<h1 class="text-4xl font-bold mb-4 text-orange-500">Meals for {{ ingredient }}</h1>
-	</div>
+	<header-layout :title-page="title"/>
 	<Meals :meals="meals"/>
 </template>
 
@@ -10,11 +8,13 @@ import { computed, onMounted } from "vue"
 import { useRoute } from "vue-router"
 import { useSearchByIngredients } from "@/stores/search-by-ingredients"
 import Meals from '@/components/meals-component.vue'
+import headerLayout from "@/components/header-layout.vue"
 
 const { params } = useRoute()
 const store = useSearchByIngredients()
 const ingredient = computed(() => store.ingredient)
 const meals = computed(() => store.items)
+const title = `Meals for ${ingredient.value}`
 
 onMounted(() => {
 	store.searchMealsByIngredient(params.ingredient as string)
