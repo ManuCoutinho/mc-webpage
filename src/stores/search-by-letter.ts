@@ -10,7 +10,9 @@ export const useSearchByLetter = defineStore('search-by-letter', {
 	actions: {
 		searchMealsByLetter(letter: string | null) {
 			if (letter) {
-				httpClient.get(`search.php?f=${letter}`).then((res) => this.meals.push(res.data.meals))
+				httpClient.get(`search.php?f=${letter}`).then((res) => {
+					this.meals = res.data.meals
+				})
 			}
 		}
 	}
