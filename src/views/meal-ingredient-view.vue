@@ -14,7 +14,7 @@ const { params } = useRoute()
 const store = useSearchByIngredients()
 const ingredient = computed(() => store.ingredient)
 const meals = computed(() => store.items)
-const title = `Meals for ${ingredient.value}`
+const title = `Meals for ${ingredient.value?.strIngredient}`
 
 onMounted(() => {
 	store.searchMealsByIngredient(params.ingredient as string)

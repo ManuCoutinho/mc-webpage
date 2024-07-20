@@ -10,7 +10,11 @@ export const useSearchByIngredients = defineStore('search-by-ingredients', {
 	getters: {},
 	actions: {
 		searchMealsByIngredient(ingredient: string) {
-			httpClient.get(`filter.php?i=${ingredient}`).then((res) => this.items.push(res.data.meals))
+			const ingredientNld = ingredient.toLowerCase().normalize('NFD').replace(' ', '_')
+
+			httpClient.get(`filter.php?i=${ingredientNld}`).then((res) => {
+				this.items = res.data.meals
+			})
 		},
 		setIngredient(ingredient: IngredientsType) {
 			this.ingredient = ingredient
