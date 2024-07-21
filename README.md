@@ -7,13 +7,13 @@
 <h1 align="center">Oishi Meals</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/ManuCoutinho/oishi-meals?color=33AAF03">
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/ManuCoutinho/oishi-meals?color=33AAF03">
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/ManuCoutinho/oishi-meals?color=33AAF03">
-   <!--  <img alt="License" src="https://img.shields.io/github/license/ManuCoutinho/oishi-meals?color=56BEB8">-->
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/ManuCoutinho/oishi-meals?color=56BEB8" /> -->
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/ManuCoutinho/oishi-meals?color=56BEB8" /> -->
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/ManuCoutinho/oishi-meals?color=56BEB8" /> -->
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/ManuCoutinho/oishi-meals?color=99F7AB">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/ManuCoutinho/oishi-meals?color=99F7AB">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/ManuCoutinho/oishi-meals?color=99F7AB">
+   <!--  <img alt="License" src="https://img.shields.io/github/license/ManuCoutinho/oishi-meals?color=99F7AB">-->
+  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/ManuCoutinho/oishi-meals?color=99F7AB" /> -->
+  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/ManuCoutinho/oishi-meals?color=99F7AB" /> -->
+  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/ManuCoutinho/oishi-meals?color=99F7AB" /> -->
 </p>
 
 Status
